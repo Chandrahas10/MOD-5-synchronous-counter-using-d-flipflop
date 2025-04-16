@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MOD-5 Synchronous Counter Simulator</title>
+  <link rel="stylesheet" href="in.css">
+</head>
+<body>
+  <h1>🕒 MOD-5 Synchronous Counter Simulator</h1>
+  <div class="main">
+
+     <div class="main2">
+
+         <div class="container1">
+      <h1>Simulator 1</h1>
+      <div class="display-panel">
+        <div class="state">
+          <h3>Current State (Q)</h3>
+          <div class="bits" id="currentBits">
+            <span id="q2">0</span>
+            <span id="q1">0</span>
+            <span id="q0">0</span>
+          </div>
+          <div class="decimal">Decimal: <span id="currentDecimal">0</span></div>
+        </div>
+  
+        <div class="state">
+          <h3>Next State (D)</h3>
+          <div class="bits" id="nextBits">
+            <span id="d2">0</span>
+            <span id="d1">0</span>
+            <span id="d0">1</span>
+          </div>
+          <div class="decimal">Next Decimal: <span id="nextDecimal">1</span></div>
+        </div>
+      </div>
+  
+      <div class="controls">
+        <button id="startPauseBtn" onclick="toggleStartPause()">▶ Start</button>
+        <button onclick="step()">⏯ Step</button>
+        <!-- <button onclick="reset()">🔄 Reset</button> -->
+      </div>
+  
+      <div class="clock-control">
+        Clock Speed:
+        <input type="range" min="200" max="2000" value="1000" id="clockSpeed">
+        <span id="clockLabel">1000ms</span>
+      </div>
+         </div>
+       
+         <div class="sim-container">
+          <h1>Simulator 2</h1>
+      <div class="controls">
+        <button onclick="reset()">🔄 Reset</button>
+        <button onclick="nextStep()">⏭ Next</button>
+        <span class="clock">Clock: <span id="clockCount">0</span></span>
+        <span class="count">Count: <span id="decimalCount">0</span> (<span id="binaryCount">000</span>)</span>
+      </div>
+      
+      <span class="next-count">Next: <span id="nextDecimal">1</span></span>
+  
+      <div class="flipflops">
+        <div class="flipflop">
+          <h3>FF2</h3>
+          <p>D: <span id="d21">0</span></p>
+          <p>Q: <span id="q21">0</span></p>
+          <p class="chip">7474</p>
+        </div>
+        <div class="flipflop">
+          <h3>FF1</h3>
+          <p>D: <span id="d11">0</span></p>
+          <p>Q: <span id="q11">0</span></p>
+          <p class="chip">7474</p>
+        </div>
+        
+        <div class="flipflop">
+          <h3>FF0</h3>
+          <p>D: <span id="d01">1</span></p>
+          <p>Q: <span id="q01">0</span></p>
+          <p class="chip">7474</p>
+        </div>
+      </div>
+  
+      <div class="logic-gates">
+        <div class="gate">
+          <h4>NOT<br><small>7404</small></h4>
+          <p>Out: <span id="notOut">1</span></p>
+        </div>
+        <div class="gate">
+          <h4>XOR<br><small>7486</small></h4>
+          <p>Out: <span id="xorOut">0</span></p>
+        </div>
+        <div class="gate">
+          <h4>AND<br><small>7408</small></h4>
+          <p>Out: <span id="andOut">0</span></p>
+        </div>
+      </div>
+  
+      <div class="bit-lights">
+        <div class="light" id="lightQ0">Q0</div>
+        <div class="light" id="lightQ1">Q1</div>
+        <div class="light active" id="lightQ2">Q2</div>
+      </div>
+         </div>
+
+    </div>
+
+    <div class="main3">
+  
+        <div class="containert">
+    <h2>Truth Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Present State (Q2 Q1 Q0)</th>
+                <th>Next State (D2 D1 D0)</th>
+                <th>Decimal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>000</td>
+                <td>001</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td>010</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>010</td>
+                <td>011</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>011</td>
+                <td>100</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>000</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+         </div>
+       
+          <div class="how-it-works">
+  <h2>🔽 How it Works</h2>
+  <p>
+    This MOD-5 counter uses three D flip-flops (7474) to count from 0 to 4 and then reset to 0.
+    The circuit follows this sequence: <strong>000 → 001 → 010 → 011 → 100 → 000</strong>
+  </p>
+
+  <h3>Logic Equations:</h3>
+  <ul>
+    <li><strong>D0</strong> = NOT Q0 <span class="chip">(7404)</span></li>
+    <li><strong>D1</strong> = Q0 XOR Q1 <span class="chip">(7486)</span></li>
+    <li><strong>D2</strong> = Q2 ? 0 : (Q1 AND Q0) <span class="chip">(7486, 7408)</span></li>
+  </ul>
+
+  <h3>Components Used:</h3>
+  <ul>
+    <li>3x D Flip-Flops <span class="chip">(7474)</span></li>
+    <li>1x NOT Gate <span class="chip">(7404)</span></li>
+    <li>1x AND Gate <span class="chip">(7408)</span></li>
+    <li>2x XOR Gates <span class="chip">(7486)</span></li>
+  </ul>
+          </div>
+    </div>
+
+  </div>
+
+  <script src="in.js"></script>
+</body>
+</html>
+
+

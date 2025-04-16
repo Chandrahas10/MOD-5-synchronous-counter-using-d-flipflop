@@ -1,0 +1,266 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #e9f1fc;
+    width: 100%;
+    height: 100vh;
+  }
+  .main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+    padding-top: 150px;
+  }
+  .main2{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .main3{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+  }
+  .container1 {
+    margin-top: 200px;
+    width: 580px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 400px;
+  }
+  .display-panel {
+    background: #0e1129;
+    color: #ff6c6c;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+  
+  .state {
+    width: 45%;
+  }
+  
+  .bits span {
+    font-size: 2rem;
+    margin: 0 0.3rem;
+  }
+  
+  .decimal {
+    color: white;
+    margin-top: 0.5rem;
+  }
+  
+  .controls button {
+    margin: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .controls button:nth-child(1) {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .controls button:nth-child(2) {
+    background-color: #727df1;
+    color: white;
+  }
+  
+  .controls button:nth-child(3) {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .clock-control {
+    margin-top: 1rem;
+  }
+
+.containert {
+  max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: fit-content;
+    margin-top: 30px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+table {
+    width: 550px;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #e9f1fb;
+    color: #333;
+}
+.sim-container {
+  width: 580px;
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.clock, .count, .next-count {
+  font-size: 18px;
+  margin: 5px;
+}
+
+.flipflops {
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.flipflop {
+  background-color: #e9f1fb;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  width: 120px;
+}
+
+.flipflop h3 {
+  margin-bottom: 10px;
+}
+
+.chip {
+  font-size: 12px;
+  color: #666;
+}
+
+.logic-gates {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.gate {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100px;
+}
+
+.bit-lights {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 10px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.light.active {
+  background-color: #ff5252;
+  color: white;
+}
+
+.how-it-works {
+  width: 580px;
+  margin-top: 80px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.how-it-works h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.how-it-works h3 {
+  margin-top: 20px;
+  color: #444;
+}
+
+.how-it-works p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.how-it-works ul {
+  list-style: disc;
+  margin-left: 20px;
+  padding-left: 10px;
+  color: #333;
+}
+
+.how-it-works li {
+  margin: 8px 0;
+}
+
+.chip {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
